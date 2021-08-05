@@ -9,6 +9,11 @@ namespace TodoApi.Models
         {
         }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=TodoDatabase;Trusted_Connection=True;");
+        }
+
         public DbSet<TodoItem> TodoItems { get; set; }
     }
 }

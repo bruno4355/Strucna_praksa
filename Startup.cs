@@ -21,7 +21,7 @@ namespace TodoApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<TodoContext>(opt =>
-                                               opt.UseInMemoryDatabase("TodoList"));
+                                               opt.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=TodoDatabase;Trusted_Connection=True;"));
             services.AddControllers();
         }
 
